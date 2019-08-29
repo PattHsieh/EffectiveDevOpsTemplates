@@ -33,7 +33,7 @@ GithubAccount = "PattHsieh"
 GithubAnsibleURL = "https://github.com/{}/ansible".format(GithubAccount)
 
 AnsiblePullCmd = \
-    "/usr/bin/ansible-pull -U {} {}.yml -i localhost".format(
+    "/usr/local/bin/ansible-pull -U {} {}.yml -i localhost".format(
         GithubAnsibleURL,
         ApplicationName
     )
@@ -104,7 +104,7 @@ t.add_resource(ec2.Instance(
    SecurityGroups=[Ref("SecurityGroup")],
    KeyName=Ref("KeyPair"),
    UserData=ud,
-   IamInstanceProfile=Ref("InstanceProfile),
+   IamInstanceProfile=Ref("InstanceProfile"),
 ))
 
 t.add_output(Output(
